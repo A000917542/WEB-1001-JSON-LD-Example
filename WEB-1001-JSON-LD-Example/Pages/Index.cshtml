@@ -1,0 +1,16 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Home page";
+}
+
+
+@section JSONLD
+{
+    [
+    @foreach(var entry in Model.JSONLD)
+    {
+        @Html.Raw(entry.ToHtmlEscapedString() + ',');
+    }
+    ]
+}
